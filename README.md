@@ -270,7 +270,7 @@ FROM
 
 ```
 
-![Row count check](assets/images/1_row_count_check.jpg)
+![Row count check](assets/images/1_row_count_check.JPG)
 
 
 
@@ -290,7 +290,7 @@ WHERE
     TABLE_NAME = 'View_YT_data'
 ```
 ### Output 
-![Column count check](assets/images/2_column_count_check.jpg)
+![Column count check](assets/images/2_column_count_check.JPG)
 
 
 
