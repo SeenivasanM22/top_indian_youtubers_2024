@@ -270,7 +270,7 @@ FROM
 
 ```
 
-![Row count check](assets/images/1_row_count_check.JPG)
+![Row count check](assets /images/1_row_count_check.JPG)
 
 
 
