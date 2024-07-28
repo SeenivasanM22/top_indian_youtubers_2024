@@ -473,37 +473,37 @@ Here are the key questions we need to answer for our marketing client:
 
 | Rank | Channel Name | Total Views (B) |
 |------|--------------|-----------------|
-| 1    | DanTDM       | 19.78           |
-| 2    | Dan Rhodes   | 18.56           |
-| 3    | Mister Max   | 15.97           |
+| 1    | T-Series     | 261.65          |
+| 2    | SET India    | 167.18          |
+| 3    | Sony SAB     | 117.43          |
 
 
 ### 4. Which 3 channels have the highest average views per video?
 
 | Channel Name | Averge Views per Video (M) |
 |--------------|-----------------|
-| Mark Ronson  | 32.27           |
-| Jessie J     | 5.97            |
-| Dua Lipa     | 5.76            |
+| ChuChu TV Nursery Rhymes & Kids Songs| 66.57           |
+| ChuChu TV Nursery Rhymes & Kids Songs| 65.16           |
+| Fun For Kids TV - Hindi Rhymes       | 45.56           |
 
 
 ### 5. Which 3 channels have the highest views per subscriber ratio?
 
 | Rank | Channel Name       | Views per Subscriber        |
 |------|-----------------   |---------------------------- |
-| 1    | GRM Daily          | 1185.79                     |
-| 2    | Nickelodeon        | 1061.04                     |
-| 3    | Disney Junior UK   | 1031.97                     |
+| 1    | ZEE5               | 1293.63                     |
+| 2    | Sony SAB           | 1247.91                     |
+| 3    | etvteluguindia     | 1231.01                     |
 
 
 
 ### 6. Which 3 channels have the highest subscriber engagement rate per video uploaded?
 
-| Rank | Channel Name    | Subscriber Engagement Rate  |
-|------|-----------------|---------------------------- |
-| 1    | Mark Ronson     | 343,000                     |
-| 2    | Jessie J        | 110,416.67                  |
-| 3    | Dua Lipa        | 104,954.95                  |
+| Rank | Channel Name      | Subscriber Engagement Rate  |
+|------|-------------------|---------------------------- |
+| 1    | Sidhu Moose Wala  | 2,13,793.10                 |
+| 2    | Desi Music Factory| 1,41,250.00                 |
+| 3    | BB Ki Vines       | 1,37,500.00                 |
 
 
 
@@ -526,15 +526,15 @@ For this analysis, we'll prioritize analysing the metrics that are important in 
 
 Campaign idea = product placement 
 
-1. NoCopyrightSounds 
-- Average views per video = 6.92 million
-- Product cost = $5
-- Potential units sold per video = 6.92 million x 2% conversion rate = 138,400 units sold
-- Potential revenue per video = 138,400 x $5 = $692,000
+1. T-Series  
+- Average views per video = 12.23 million
+- Product cost = Rs.150
+- Potential units sold per video = 12.23 million x 2% conversion rate = 138,400 units sold
+- Potential revenue per video = 138,400 x 150 = RS.692,000
 - Campaign cost (one-time fee) = $50,000
 - **Net profit = $692,000 - $50,000 = $642,000**
 
-b. DanTDM
+b. SET India
 
 - Average views per video = 5.34 million
 - Product cost = $5
@@ -543,7 +543,7 @@ b. DanTDM
 - Campaign cost (one-time fee) = $50,000
 - **Net profit = $534,000 - $50,000 = $484,000**
 
-c. Dan Rhodes
+c. Zee Music Company
 
 - Average views per video = 11.15 million
 - Product cost = $5
