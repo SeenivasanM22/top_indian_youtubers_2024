@@ -136,7 +136,7 @@ Some of the data visuals that may be appropriate in answering our questions incl
 
 - What's the general approach in creating this solution from start to finish?
 
-1. Get the data
+1. Get the data from Youtube by using Python API Key
 2. Explore the data in Excel
 3. Load the data into SQL Server
 4. Clean the data with SQL
@@ -526,34 +526,34 @@ For this analysis, we'll prioritize analysing the metrics that are important in 
 
 Campaign idea = product placement 
 
-1. T-Series  
+a. **T-Series**  
 - Average views per video = 12.23 million
 - Product cost = Rs.150
-- Potential units sold per video = 12.23 million x 2% conversion rate = 138,400 units sold
-- Potential revenue per video = 138,400 x 150 = RS.692,000
-- Campaign cost (one-time fee) = $50,000
-- **Net profit = $692,000 - $50,000 = $642,000**
+- Potential units sold per video = 12.23 million x 2% conversion rate = 2,44,600 units sold
+- Potential revenue per video = 2,44,600 x 150 = RS.3,66,9000
+- Campaign cost (one-time fee) = Rs.15,00,000
+- **Net profit =  RS.3,66,9000 - RS.15,00,000 = RS.3,51,90,000**
 
-b. SET India
+b. **SET India**
 
-- Average views per video = 5.34 million
-- Product cost = $5
-- Potential units sold per video = 5.34 million x 2% conversion rate = 106,800 units sold
-- Potential revenue per video = 106,800 x $5 = $534,000
-- Campaign cost (one-time fee) = $50,000
-- **Net profit = $534,000 - $50,000 = $484,000**
+- Average views per video = 1.18 million
+- Product cost = RS.150
+- Potential units sold per video = 1.18 million x 2% conversion rate = 23,600 units sold
+- Potential revenue per video = 23,600 x RS.150 = Rs.35,40,00
+- Campaign cost (one-time fee) = RS.15,00,000
+- **Net profit = Rs.35,40,00 - RS.15,00,000 = Rs.20,40,000**
 
-c. Zee Music Company
+c. **Zee Music Company**
 
-- Average views per video = 11.15 million
-- Product cost = $5
-- Potential units sold per video = 11.15 million x 2% conversion rate = 223,000 units sold
-- Potential revenue per video = 223,000 x $5 = $1,115,000
-- Campaign cost (one-time fee) = $50,000
-- **Net profit = $1,115,000 - $50,000 = $1,065,000**
+- Average views per video = 5.85 million
+- Product cost = Rs.150
+- Potential units sold per video = 5.85 million x 2% conversion rate = 1,17,000 units sold
+- Potential revenue per video = 1,17,000 x Rs.150 = RS.1,75,50,000
+- Campaign cost (one-time fee) = RS.15,00,000
+- **Net profit = RS.1,75,50,000 - RS.15,00,000 = RS.1,60,50,000**
 
 
-Best option from category: Dan Rhodes
+Best option from category: T-Series
 
 
 #### SQL query 
@@ -572,24 +572,24 @@ Best option from category: Dan Rhodes
 
 -- 1. 
 DECLARE @conversionRate FLOAT = 0.02;		-- The conversion rate @ 2%
-DECLARE @productCost FLOAT = 5.0;			-- The product cost @ $5
-DECLARE @campaignCost FLOAT = 50000.0;		-- The campaign cost @ $50,000	
+DECLARE @productCost FLOAT = 150.0;			-- The product cost @ Rs.150
+DECLARE @campaignCost FLOAT = 1500000.0;		-- The campaign cost @ RS.15,00,000	
 
 
 -- 2.  
 WITH ChannelData AS (
     SELECT 
-        channel_name,
+        Channel_Name,
         total_views,
         total_videos,
         ROUND((CAST(total_views AS FLOAT) / total_videos), -4) AS rounded_avg_views_per_video
     FROM 
-        youtube_db.dbo.view_uk_youtubers_2024
+       View_YT_data
 )
 
 -- 3. 
 SELECT 
-    channel_name,
+    Channel_Name,
     rounded_avg_views_per_video,
     (rounded_avg_views_per_video * @conversionRate) AS potential_units_sold_per_video,
     (rounded_avg_views_per_video * @conversionRate * @productCost) AS potential_revenue_per_video,
@@ -600,7 +600,7 @@ FROM
 
 -- 4. 
 WHERE 
-    channel_name in ('NoCopyrightSounds', 'DanTDM', 'Dan Rhodes')    
+    Channel_Name in ('T-Series', 'SET India', 'Zee Music Company')    
 
 
 -- 5.  
@@ -619,34 +619,34 @@ ORDER BY
 
 Campaign idea = sponsored video series  
 
-1. GRM Daily
-- Average views per video = 510,000
-- Product cost = $5
-- Potential units sold per video = 510,000 x 2% conversion rate = 10,200 units sold
-- Potential revenue per video = 10,200 x $5= $51,000
-- Campaign cost (11-videos @ $5,000 each) = $55,000
-- **Net profit = $51,000 - $55,000 = -$4,000 (potential loss)**
+a. **APB NEWS**
+- Average views per video = 50,000
+- Product cost = Rs.150
+- Potential units sold per video = 50,000 x 2% conversion rate = 1,000 units sold
+- Potential revenue per video = 1,000x Rs.150= Rs.1,50,000
+- Campaign cost (50-videos @ Rs.30,000 each) = Rs.15,00,000
+- **Net profit = RS.1,50,000 - Rs.15,00,000 = -13,50,000 (potential loss)**
 
-b. **Manchester City**
+b. **Aaj Tak**
 
-- Average views per video = 240,000
-- Product cost = $5
-- Potential units sold per video = 240,000 x 2% conversion rate = 4,800 units sold
-- Potential revenue per video = 4,800 x $5= $24,000
-- Campaign cost (11-videos @ $5,000 each) = $55,000
-- **Net profit = $24,000 - $55,000 = -$31,000 (potential loss)**
+- Average views per video = 90,000
+- Product cost = Rs.150
+- Potential units sold per video = 90,000 x 2% conversion rate = 1,800 units sold
+- Potential revenue per video = 1,800 x Rs.150= RS.2,70,000
+- Campaign cost (50-videos @ RS.30,000 each)  = Rs.15,00,000
+- **Net profit = RS.2,70,000 - Rs.15,00,000 = -RS.12,30,000 (potential loss)**
 
-b. **Yogscast**
+c. **IndianTV**
 
-- Average views per video = 710,000
-- Product cost = $5
-- Potential units sold per video = 710,000 x 2% conversion rate = 14,200 units sold
-- Potential revenue per video = 14,200 x $5= $71,000
-- Campaign cost (11-videos @ $5,000 each) = $55,000
-- **Net profit = $71,000 - $55,000 = $16,000 (profit)**
+- Average views per video = 70,000
+- Product cost = Rs.150
+- Potential units sold per video = 70,000 x 2% conversion rate = 1,400 units sold
+- Potential revenue per video = 1,400 x Rs.150= RS.2,10,000
+- Campaign cost (50-videos @ RS.30,000 each) = Rs.15,00,000
+- **Net profit = RS.2,10,000 - Rs.15,00,000 = RS.12,90,000 (potential loss)**
 
 
-Best option from category: Yogscast
+Best option from category: null
 
 #### SQL query 
 ```sql
@@ -661,26 +661,26 @@ Best option from category: Yogscast
 
 -- 1.
 DECLARE @conversionRate FLOAT = 0.02;           -- The conversion rate @ 2%
-DECLARE @productCost FLOAT = 5.0;               -- The product cost @ $5
-DECLARE @campaignCostPerVideo FLOAT = 5000.0;   -- The campaign cost per video @ $5,000
-DECLARE @numberOfVideos INT = 11;               -- The number of videos (11)
+DECLARE @productCost FLOAT = 5.0;               -- The product cost @ Rs.150
+DECLARE @campaignCostPerVideo FLOAT = 30,000.0;   -- The campaign cost per video @ Rs.15,00,000
+DECLARE @numberOfVideos INT = 50;               -- The number of videos (11)
 
 
 -- 2.
 WITH ChannelData AS (
     SELECT
-        channel_name,
+        Channel_Name,
         total_views,
         total_videos,
         ROUND((CAST(total_views AS FLOAT) / total_videos), -4) AS rounded_avg_views_per_video
     FROM
-        youtube_db.dbo.view_uk_youtubers_2024
+        yView_YT_data
 )
 
 
 -- 3.
 SELECT
-    channel_name,
+    Channel_Name,
     rounded_avg_views_per_video,
     (rounded_avg_views_per_video * @conversionRate) AS potential_units_sold_per_video,
     (rounded_avg_views_per_video * @conversionRate * @productCost) AS potential_revenue_per_video,
@@ -691,7 +691,7 @@ FROM
 
 -- 4.
 WHERE
-    channel_name IN ('GRM Daily', 'Man City', 'YOGSCAST Lewis & Simon ')
+    Channel_Name IN ('APB NEWS', 'Aaj Tak', 'IndianTV')
 
 
 -- 5.
@@ -710,34 +710,34 @@ ORDER BY
 
 Campaign idea = Influencer marketing 
 
-a. DanTDM
+a. **T-Series**
 
-- Average views per video = 5.34 million
-- Product cost = $5
-- Potential units sold per video = 5.34 million x 2% conversion rate = 106,800 units sold
-- Potential revenue per video = 106,800 x $5 = $534,000
-- Campaign cost (3-month contract) = $130,000
-- **Net profit = $534,000 - $130,000 = $404,000**
+- Average views per video = 12.23 million
+- Product cost = Rs.150
+- Potential units sold per video = 12.23 million x 2% conversion rate = 2,44,600 units sold
+- Potential revenue per video = 2,44,600 x Rs.150 = RS.3,66,90,000
+- Campaign cost (3-month contract) = Rs.15,00,000
+- **Net profit = RS.3,66,90,000 - Rs.15,00,000 = RS.3,51,90,000**
 
-b. Dan Rhodes
+b. **SET India**
 
-- Average views per video = 11.15 million
-- Product cost = $5
-- Potential units sold per video = 11.15 million x 2% conversion rate = 223,000 units sold
-- Potential revenue per video = 223,000 x $5 = $1,115,000
-- Campaign cost (3-month contract) = $130,000
-- **Net profit = $1,115,000 - $130,000 = $985,000**
+- Average views per video = 1.18 million
+- Product cost = Rs.150
+- Potential units sold per video = 1.18 million x 2% conversion rate = 23,600 units sold
+- Potential revenue per video = 23,600 x Rs.150 = RS.35,40,000
+- Campaign cost (3-month contract) = Rs.15,00,000
+- **Net profit = RS.35,40,000 - Rs.15,00,000 = $985,000**
 
-c. Mister Max
+c. **Sony SAB**
 
-- Average views per video = 14.06 million
-- Product cost = $5
-- Potential units sold per video = 14.06 million x 2% conversion rate = 281,200 units sold
-- Potential revenue per video = 281,200 x $5 = $1,406,000
-- Campaign cost (3-month contract) = $130,000
-- **Net profit = $1,406,000 - $130,000 = $1,276,000**
+- Average views per video = 1.33 million
+- Product cost = Rs.150
+- Potential units sold per video = 1.33  million x 2% conversion rate = 26,600 units sold
+- Potential revenue per video = 26,600 x Rs.150 = RS.39,90,000
+- Campaign cost (3-month contract) = Rs.15,00,000
+- **Net profit = RS.39,90,000 - Rs.15,00,000 = RS.24,90,000**
 
-Best option from category: Mister Max
+Best option from category: T-Series
 
 
 
@@ -755,26 +755,26 @@ Best option from category: Mister Max
 
 -- 1.
 DECLARE @conversionRate FLOAT = 0.02;        -- The conversion rate @ 2%
-DECLARE @productCost MONEY = 5.0;            -- The product cost @ $5
-DECLARE @campaignCost MONEY = 130000.0;      -- The campaign cost @ $130,000
+DECLARE @productCost MONEY = 5.0;            -- The product cost @ Rs.150
+DECLARE @campaignCost MONEY = 15,00,000.0;   -- The campaign cost @ Rs.15,00,000
 
 
 
 -- 2.
 WITH ChannelData AS (
     SELECT
-        channel_name,
+        Channel_Name,
         total_views,
         total_videos,
         ROUND(CAST(total_views AS FLOAT) / total_videos, -4) AS avg_views_per_video
     FROM
-        youtube_db.dbo.view_uk_youtubers_2024
+        View_YT_data
 )
 
 
 -- 3.
 SELECT
-    channel_name,
+    Channel_Name,
     avg_views_per_video,
     (avg_views_per_video * @conversionRate) AS potential_units_sold_per_video,
     (avg_views_per_video * @conversionRate * @productCost) AS potential_revenue_per_video,
@@ -785,7 +785,7 @@ FROM
 
 -- 4.
 WHERE
-    channel_name IN ('Mister Max', 'DanTDM', 'Dan Rhodes')
+    Channel_Name IN ('T-Series', 'SET India', 'Sony SAB')
 
 
 -- 5.
@@ -807,9 +807,9 @@ ORDER BY
 We discovered that 
 
 
-1. NoCopyrightSOunds, Dan Rhodes and DanTDM are the channnels with the most subscribers in the UK
-2. GRM Daily, Man City and Yogscast are the channels with the most videos uploaded
-3. DanTDM, Dan RHodes and Mister Max are the channels with the most views
+1. T-Series,SET India and Zee Music Company are the channnels with the most subscribers in the India
+2. APB NEWS,Aaj Tak and IndianTV are the channels with the most videos uploaded
+3. T-Series,SET India and Sony SAB are the channels with the most views
 4. Entertainment channels are useful for broader reach, as the channels posting consistently on their platforms and generating the most engagement are focus on entertainment and music 
 
 
@@ -819,34 +819,33 @@ We discovered that
 
 - What do you recommend based on the insights gathered? 
   
-1. Dan Rhodes is the best YouTube channel to collaborate with if we want to maximize visbility because this channel has the most YouTube subscribers in the UK
-2. Although GRM Daily, Man City and Yogcasts are regular publishers on YouTube, it may be worth considering whether collaborating with them with the current budget caps are worth the effort, as the potential return on investments is significantly lower compared to the other channels.
-3. Mister Max is the best YouTuber to collaborate with if we're interested in maximizing reach, but collaborating with DanTDM and Dan Rhodes may be better long-term options considering the fact that they both have large subscriber bases and are averaging significantly high number of views.
-4. The top 3 channels to form collaborations with are NoCopyrightSounds, DanTDM and Dan Rhodes based on this analysis, because they attract the most engagement on their channels consistently.
+1. T-Series is the best YouTube channel to collaborate with if we want to maximize visbility because this channel has the most YouTube subscribers in the India
+2. Although APB NEWS,Aaj Tak and IndianTV are regular publishers on YouTube, it may be worth considering whether collaborating with them with the lower budget caps are worth the effort, as the potential return on investments is significantly lower compared to the other channels.
+3. T-Series is the best YouTuber to collaborate with if we're interested in maximizing reach, but collaborating with
+SET India, Sony SAB and Zee Music may be better in term of negotiation with long-term options considering the fact that they have large subscriber bases and are averaging significantly high number of views.
+5. The top 3 channels to form collaborations with are T-Series, Zee Music and Sony SAB based on this analysis, because they attract the most engagement on their channels consistently.
 
 
 ### Potential ROI 
 - What ROI do we expect if we take this course of action?
 
-1. Setting up a collaboration deal with Dan Rhodes would make the client a net profit of $1,065,000 per video
-2. An influencer marketing contract with Mister Max can see the client generate a net profit of $1,276,000
-3. If we go with a product placement campaign with DanTDM, this could  generate the client approximately $484,000 per video. If we advance with an influencer marketing campaign deal instead, this would make the client a one-off net profit of $404,000.
-4. NoCopyrightSounds could profit the client $642,000 per video too (which is worth considering) 
-
+1. Setting up a collaboration deal with T-Series would make the client a net profit of RS.3,51,90,000 per video
+2. An influencer marketing contract with Sony SAB can see the client generate a net profit of RS.24,90,000
+3. Zee Music could profit the client RS.1,60,50,000 per video too (which is worth considering becasue we may reduse the campaign cost by negosiate) 
 
 
 
 ### Action plan
 - What course of action should we take and why?
 
-Based on our analysis, we beieve the best channel to advance a long-term partnership deal with to promote the client's products is the Dan Rhodes channel. 
+Based on our analysis, we beieve the best channel to advance a long-term partnership deal with to promote the client's products is the T-Series channel. 
 
-We'll have conversations with the marketing client to forecast what they also expect from this collaboration. Once we observe we're hitting the expected milestones, we'll advance with potential partnerships with DanTDM, Mister Max and NoCopyrightSounds channels in the future.   
+We'll have conversations with the marketing client to forecast what they also expect from this collaboration. Once we observe we're hitting the expected milestones, we'll advance with potential partnerships with Zee Music, Sony SAB and SET India channels in the future.   
 
 - What steps do we take to implement the recommended decisions effectively?
 
 
-1. Reach out to the teams behind each of these channels, starting with Dan Rhodes
+1. Reach out to the teams behind each of these channels, starting with T-Series
 2. Negotiate contracts within the budgets allocated to each marketing campaign
 3. Kick off the campaigns and track each of their performances against the KPIs
 4. Review how the campaigns have gone, gather insights and optimize based on feedback from converted customers and each channel's audiences 
