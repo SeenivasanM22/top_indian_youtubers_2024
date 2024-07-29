@@ -115,7 +115,7 @@ Some of the data visuals that may be appropriate in answering our questions incl
 
 
 
-![Dashboard-Mockup](assets/images/Mockup DashBoard.JPG)
+![Dashboard-Mockup](assets /images/Mockup DashBoard.JPG)
 
 
 ## Tools 
@@ -290,7 +290,7 @@ WHERE
     TABLE_NAME = 'View_YT_data'
 ```
 ### Output 
-![Column count check](assets/images/2_column_count_check.JPG)
+![Column count check](assets /images/2_column_count_check.JPG)
 
 
 
@@ -311,7 +311,7 @@ WHERE
     TABLE_NAME = 'View_YT_data';
 ```
 ### Output
-![Data type check](assets/images/3_data_type_check.jpg)
+![Data type check](assets /images/3_data_type_check.jpg)
 
 
 ## Duplicate count check
@@ -339,7 +339,7 @@ HAVING
     COUNT(*) > 1;
 ```
 ### Output
-![Duplicate count check](assets/images/4_duplicate_records_check.jpg)
+![Duplicate count check](assets /images/4_duplicate_records_check.jpg)
 
 # Visualization 
 
