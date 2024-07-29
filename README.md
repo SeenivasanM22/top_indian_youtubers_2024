@@ -115,7 +115,7 @@ Some of the data visuals that may be appropriate in answering our questions incl
 
 
 
-![Dashboard-Mockup](assets /images/Mockup DashBoard.JPG)
+![Dashboard-Mockup](assets /images/Mockup DashBoard.png)
 
 
 ## Tools 
@@ -311,7 +311,7 @@ WHERE
     TABLE_NAME = 'View_YT_data';
 ```
 ### Output
-![Data type check](assets /images/3_data_type_check.jpg)
+![Data type check](assets /images/3_data_type_check.JPG)
 
 
 ## Duplicate count check
@@ -339,7 +339,7 @@ HAVING
     COUNT(*) > 1;
 ```
 ### Output
-![Duplicate count check](assets /images/4_duplicate_records_check.jpg)
+![Duplicate count check](assets /images/4_duplicate_records_check.JPG)
 
 # Visualization 
 
@@ -611,7 +611,7 @@ ORDER BY
 
 #### Output
 
-![Most subsc](assets/images/youtubers_with_the_most_subs.jpg)
+![Most subsc](assets /images/youtubers_with_the_most_subs.jpg)
 
 ### 2. Youtubers with the most videos uploaded
 
@@ -701,7 +701,7 @@ ORDER BY
 
 #### Output
 
-![Most videos](assets/images/youtubers_with_the_most_videos.png)
+![Most videos](assets /images/youtubers_with_the_most_videos.jpg)
 
 
 ### 3.  Youtubers with the most views 
@@ -796,7 +796,7 @@ ORDER BY
 
 #### Output
 
-![Most views](assets/images/youtubers_with_the_most_views.png)
+![Most views](assets /images/youtubers_with_the_most_views.jpg)
 
 
 
