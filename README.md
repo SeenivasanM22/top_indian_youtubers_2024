@@ -132,8 +132,6 @@ Some of the data visuals that may be appropriate in answering our questions incl
 
 # Development
 
-## Pseudocode
-
 - What's the general approach in creating this solution from start to finish?
 
 1. Get the data from Youtube by using Python API Key
