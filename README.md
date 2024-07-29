@@ -1,6 +1,9 @@
 # Data Portfolio: Excel to Power BI 
 
 
+![Powe BI Dashboard](assets /images/Top Indian Youtubers.pbix)
+
+
 
 # Table of contents 
 
