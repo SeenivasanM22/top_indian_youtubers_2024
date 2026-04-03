@@ -1,7 +1,7 @@
 # Data Portfolio: Excel to Power BI 
 
 
-(![PowerBI Dashboard](assets /images/Power BI DashBoard.JPG)
+(![PowerBI Dashboard](assets /images/kaggle_to_powerbi.gif)
 )
 
 
