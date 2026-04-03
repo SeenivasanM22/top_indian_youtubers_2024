@@ -1,7 +1,8 @@
 # Data Portfolio: Excel to Power BI 
 
 
-![Power BI Dashboard](assets /images/Power BI DashBoard.JPG)
+(![PowerBI Dashboard](https://github.com/user-attachments/assets/9169e911-2370-4406-886a-7a12a75a5978)
+)
 
 
 
